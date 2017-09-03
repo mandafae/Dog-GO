@@ -3,28 +3,46 @@ body {
 }
 
 header {
-  width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   padding: 10px 0px 10px 0px;
+  color: #841983;
   text-align: center;
-  background-color: #4CDEF5;
 }
 
 main {
-  width: 800px;
+  margin-top: 5px;
+  border: 2px solid #000000;
+}
+
+.taco {
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .searchForm {
   margin-bottom: 10px;
-  background-color: #A4D555;
   padding: 5px;
 }
 
 .photo {
-  background-color: #FF5992;
-  padding: 10px 0px 10px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.leftBorderCircles {
+  margin-left: -150px;
+  border-radius: 100%;
+  width: 200px;
+  padding-bottom: 200px;
+}
+
+.rightBorderCircles {
+  margin-right: -150px;
+  float: right;
+  border-radius: 100%;
+  width: 200px;
+  padding-bottom: 200px;
 }
