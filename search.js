@@ -12,21 +12,38 @@ var settings = {
   }
 }
 
+// Create function to initialize map
 function initMap(business, latlng) {
-  var location = latlng;
-  var map = new google.maps.Map(document.getElementById(business), {
+  let directionsDisplay = new google.maps.DirectionsRenderer();
+  let location = latlng;
+  let map = new google.maps.Map(document.getElementById(business), {
     center: location,
     zoom: 15
   });
-  var marker = new google.maps.Marker({
-      position: location,
-      map: map
-      });
+  directionsDisplay.setMap(map);
+
+  // Set origin, destination, and travel mode for route calculation
+  let start = searchText;
+  let end = latlng;
+  let request = {
+    origin: start,
+    destination: end,
+    travelMode: 'DRIVING'
+  };
+
+  // Pass directions settings to the Google directions service
+  let directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(result, status) {
+    if (status == 'OK') {
+      // Display the route
+      directionsDisplay.setDirections(result);
+    }
+  });
 };
-// Use AJAX to perform API call
+
+// Use AJAX to perform Yelp API call
 $.ajax(settings).done(function (response) {
   let results = response.businesses;
-  console.log(response);
 
   // Display results
   results.forEach(function(business) {
@@ -44,8 +61,6 @@ $.ajax(settings).done(function (response) {
     let phone = business.display_phone;
     let price = business.price;
     let geo = {lat: business.coordinates.latitude, lng: business.coordinates.longitude};
-    console.log("geo:",geo);
-    console.log(typeof geo)
     let mapDiv = document.createElement('div');
     details.innerHTML = `<img src=${businessImg} style='width: auto; height: auto; max-width: 150px; max-height: 100px'><p>Category: ${category}<br>Phone number: ${phone}<br>Average price: ${price}</p>`;
     $(details).addClass('detail');
@@ -62,7 +77,7 @@ $.ajax(settings).done(function (response) {
       $(businessInfo).hover(function() {
         $(details).toggle();
         // Call map function to display map
-        initMap(businessName, geo)
+        initMap(businessName, geo);
       })
       })
 
