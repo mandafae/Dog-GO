@@ -16,7 +16,7 @@ main {
   border: 2px solid #000000;
 }
 
-#map {
+.map {
   height: 100%;
 }
 
@@ -42,8 +42,8 @@ main {
 .detail {
   background-color: #FFFFFF;
   border: 1px solid #000000;
-  width: 300px;
-  height: 150px;
+  width: 350px;
+  height: 450px;
   position: absolute;
   display: inline-block;
   float:left;

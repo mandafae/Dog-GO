@@ -12,6 +12,17 @@ var settings = {
   }
 }
 
+function initMap(business, latlng) {
+  var location = latlng;
+  var map = new google.maps.Map(document.getElementById(business), {
+    center: location,
+    zoom: 15
+  });
+  var marker = new google.maps.Marker({
+      position: location,
+      map: map
+      });
+};
 // Use AJAX to perform API call
 $.ajax(settings).done(function (response) {
   let results = response.businesses;
@@ -32,26 +43,15 @@ $.ajax(settings).done(function (response) {
     let category = business.categories[0].title;
     let phone = business.display_phone;
     let price = business.price;
-    let geo = `{lat: ${business.coordinates.latitude}, lng: ${business.coordinates.longitude}}`;
+    let geo = {lat: business.coordinates.latitude, lng: business.coordinates.longitude};
     console.log("geo:",geo);
+    console.log(typeof geo)
     let mapDiv = document.createElement('div');
-    $(mapDiv).attr('id', 'map');
-    details.innerHTML = `<img src=${businessImg} style='width: 50%; height: 50%'><p>Category: ${category}<br>Phone number: ${phone}<br>Average price: ${price}</p>`;
+    details.innerHTML = `<img src=${businessImg} style='width: auto; height: auto; max-width: 150px; max-height: 100px'><p>Category: ${category}<br>Phone number: ${phone}<br>Average price: ${price}</p>`;
     $(details).addClass('detail');
+    $(mapDiv).attr({id: businessName, class: 'map'});
 
-    // Google Maps stuff
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: geo,
-          zoom: 8
-        });
-      };
-      $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/js?key=AIzaSyDY-gNEsO3s_1BLdXrFsFPryirfO7q7AwY&callback=initMap'
-      }).done(function(result) {
-        console.log(result);
-      });
+    $(details).append(mapDiv);
 
       // Add divs to DOM
       $(businessInfo).append(details);
@@ -61,6 +61,8 @@ $.ajax(settings).done(function (response) {
       // Add hover event to toggle details
       $(businessInfo).hover(function() {
         $(details).toggle();
+        // Call map function to display map
+        initMap(businessName, geo)
       })
       })
 
