@@ -1,5 +1,5 @@
-$('.search input[type=submit]').click((e) => {
-  e.preventDefault();
+// $('.search input[type=submit]').click((e) => {
+  // e.preventDefault();
 
 /* ZOMATO API CALL. Decided not to use when I got Yelp API call working but keeping the code in case I need it. */
 //   let searchText = $('#location').val();
@@ -52,39 +52,46 @@ $('.search input[type=submit]').click((e) => {
 //
   // YELP API CALL
   // Get input text to use for search
-  let searchText = $('#location').val();
-  // Define the settings for the API call
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=dog%20friendly&categories=restaurants,bars&open_now=true&sort_by=distance&location=${searchText}`,
-    "method": "GET",
-    "headers": {
-      "authorization": "Bearer 80LIgTKphcU7oWrMtt4e9TahnIrn-P3sMkhDw1B3CW25GdSHZB4-PU-dM_hRIwx3AzT3SUPoXo0fRtNadtudHoxBrjGTZr_Wgavv6fqQ5ZRoH79m9HaXPBjrnX-pWXYx",
-      "cache-control": "no-cache",
-      "postman-token": "3f23d8c3-ce48-a224-50c0-14b9094948fc"
-    }
-  }
-
-  // Use AJAX to perform API call
-  $.ajax(settings).done(function (response) {
-    let results = response.businesses;
-    // Display results
-    results.forEach(function(business) {
-      let businessInfo = document.createElement('div');
-      let businessName = business.name;
-      let businessImg = business.image_url;
-      let businessAddress = `${business.location.display_address[0]}, ${business.location.display_address[1]}`;
-      businessInfo.innerHTML = `<img src=${businessImg} style='width: 10%; height: 10%'><h4>${businessName}</h4><p>${businessAddress}</p>`;
-      $('.searchForm').append(businessInfo);
-    })
-  });
-});
+//   let searchText = $('#location').val();
+//   // Define the settings for the API call
+//   var settings = {
+//     "async": true,
+//     "crossDomain": true,
+//     "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=dog%20friendly&categories=restaurants,bars&open_now=true&sort_by=distance&location=${searchText}`,
+//     "method": "GET",
+//     "headers": {
+//       "authorization": "Bearer 80LIgTKphcU7oWrMtt4e9TahnIrn-P3sMkhDw1B3CW25GdSHZB4-PU-dM_hRIwx3AzT3SUPoXo0fRtNadtudHoxBrjGTZr_Wgavv6fqQ5ZRoH79m9HaXPBjrnX-pWXYx",
+//       "cache-control": "no-cache",
+//       "postman-token": "3f23d8c3-ce48-a224-50c0-14b9094948fc"
+//     }
+//   }
+//
+//   // Use AJAX to perform API call
+//   $.ajax(settings).done(function (response) {
+//     let results = response.businesses;
+//     // Display results
+//     results.forEach(function(business) {
+//       let businessInfo = document.createElement('div');
+//       let businessName = business.name;
+//       let businessImg = business.image_url;
+//       let businessAddress = `${business.location.display_address[0]}, ${business.location.display_address[1]}`;
+//       businessInfo.innerHTML = `<img src=${businessImg} style='width: 10%; height: 10%'><h4>${businessName}</h4><p>${businessAddress}</p>`;
+//       $('.searchForm').append(businessInfo);
+//     });
+//     // window.location.href = 'results.html';
+//   })
+//   .fail(function() {
+//     let errorMessage = document.createElement('p');
+//     errorMessage.innerText = "We're sorry. Your search did not return any results.";
+//     $('.searchForm').append(errorMessage);
+//   });
+// });
 
 // Draw divs for decorative left border
 function drawLeftBorder (){
   let leftBorderContainer = document.getElementsByClassName('leftBorder')[0];
-  for (let i=0; i<4; i++) {
+  let windowHeight = $(window).height();
+  for (let i=0; i<(windowHeight/190); i++) {
     let circle = document.createElement('div');
     circle.className = "leftBorderCircles";
     if (i % 2 === 0) {
@@ -101,7 +108,8 @@ drawLeftBorder();
 // Draw divs for decorative right border
 function drawRightBorder (){
   let rightBorderContainer = document.getElementsByClassName('rightBorder')[0];
-  for (let i=0; i<4; i++) {
+  let windowHeight = $(window).height();
+  for (let i=0; i<(windowHeight/190); i++) {
     let circle = document.createElement('div');
     circle.className = "rightBorderCircles";
     if (i % 2 === 0) {
