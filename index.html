@@ -14,23 +14,23 @@ crossorigin="anonymous"></script>
   <body>
     <div class="container-fluid">
       <div class="row">
-      <div class="col-md-1 hidden-sm-down leftBorder"></div>
-        <div class="col-md-10 col-xs-12">
+      <div class="col-md-1 leftBorder"></div>
+        <div class="col-md-10">
           <main>
-            <header><img src="logo.png" alt="Dog-GO!" id="logo"></header>
+            <header><img class="img-fluid" src="logo.png" alt="Dog-GO!" id="logo"></header>
               <div class="searchForm">
-                <form class="search" action="">
-                  <input type="text" id="location" size="50" placeholder="119 Nueces St, Austin TX 78701">
-                  <input type="submit" value="Let's GO!">
+                <form class="search form-inline" action="">
+                  <input type="text" id="location" class="form-control col-md-10" placeholder="119 Nueces St, Austin TX 78701">
+                  <button type="button" class="btn btn-info">Let's GO!</button>
                 </form>
                 <p>Search by address, city/state, neighborhood, or zip code.</p>
               </div>
               <div class="photo">
-                <img class="taco" src="taco.jpg" alt="Taco Dog loves barbecue!">
+                <img class="taco img-fluid" src="taco.jpg" alt="Taco Dog loves barbecue!">
               </div>
             </div>
           </main>
-        <div class="col-md-1 hidden-sm-down rightBorder"></div>
+        <div class="col-md-1 rightBorder"></div>
       </div>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY-gNEsO3s_1BLdXrFsFPryirfO7q7AwY&callback=initMap"

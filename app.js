@@ -4,7 +4,7 @@ function drawLeftBorder (){
   let windowHeight = $(window).height();
   for (let i=0; i<(windowHeight/200); i++) {
     let circle = document.createElement('div');
-    circle.className = "leftBorderCircles";
+    $(circle).addClass("leftBorderCircles");
     if (i % 2 === 0) {
       circle.style.backgroundColor = "#A4D555";
       leftBorderContainer.append(circle);
@@ -22,7 +22,7 @@ function drawRightBorder (){
   let windowHeight = $(window).height();
   for (let i=0; i<(windowHeight/200); i++) {
     let circle = document.createElement('div');
-    circle.className = "rightBorderCircles";
+    $(circle).addClass("rightBorderCircles");
     if (i % 2 === 0) {
       circle.style.backgroundColor = "#FF5992";
       rightBorderContainer.append(circle);
@@ -66,8 +66,9 @@ function initMap(business, latlng) {
 };
 
 // Add click event for search
-$('.search input[type=submit]').click((e) => {
+$('button').click((e) => {
   e.preventDefault();
+  // Hide search form and photo
   $('.searchForm').hide();
   $('.photo').hide();
 
@@ -145,6 +146,7 @@ $('.search input[type=submit]').click((e) => {
   });
 });
 
+// Reset search when user clicks on logo
 $('#logo').click((e) => {
   e.preventDefault();
   $('#location').val('');

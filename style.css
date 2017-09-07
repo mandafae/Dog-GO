@@ -58,6 +58,15 @@ main {
   padding-bottom: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+  [class="leftBorderCircles"] {
+    display: none;
+  }
+  [class="rightBorderCircles"] {
+    display: none;
+  }
+}
+
 .leftBorderCircles {
   margin-left: -150px;
   border-radius: 100%;
