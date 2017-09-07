@@ -6,7 +6,6 @@
 src="https://code.jquery.com/jquery-3.2.1.js"
 integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy58SvGAqnW27U4EY7Mfq52wjAjy9YkEU&libraries=places"></script>
   <script defer src="app.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
@@ -15,13 +14,13 @@ crossorigin="anonymous"></script>
   <body>
     <div class="container-fluid">
       <div class="row">
-      <div class="col-md-1 leftBorder"></div>
-        <div class="col-md-10">
+      <div class="col-md-1 hidden-sm-down leftBorder"></div>
+        <div class="col-md-10 col-xs-12">
           <main>
-            <header><img src="logo.png" alt="Dog-GO!"></header>
+            <header><img src="logo.png" alt="Dog-GO!" id="logo"></header>
               <div class="searchForm">
-                <form class="search" action="results.html" method="get">
-                  <input name="location" type="text" id="location" size="50" placeholder="Austin, TX">
+                <form class="search" action="">
+                  <input type="text" id="location" size="50" placeholder="119 Nueces St, Austin TX 78701">
                   <input type="submit" value="Let's GO!">
                 </form>
                 <p>Search by address, city/state, neighborhood, or zip code.</p>
@@ -31,8 +30,10 @@ crossorigin="anonymous"></script>
               </div>
             </div>
           </main>
-        <div class="col-md-1 rightBorder"></div>
+        <div class="col-md-1 hidden-sm-down rightBorder"></div>
       </div>
     </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY-gNEsO3s_1BLdXrFsFPryirfO7q7AwY&callback=initMap"
+async defer></script>
   </body>
 </html>
