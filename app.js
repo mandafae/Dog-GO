@@ -132,11 +132,12 @@ $('button').click((e) => {
         // Call map function to display map
         initMap(businessName, geo);
       })
-      $(businessInfo).bind('tap', function() {
+      // Add tap events for mobile functionality
+      $(businessInfo).on('tap', function() {
         $(details).show();
       })
-      $(details).bind('tap', function(ev) {
-        $(ev.target).hide();
+      $(details).on('tap', function() {
+        $(this).hide();
       })
     })
 
