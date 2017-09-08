@@ -96,6 +96,10 @@ $('button').click((e) => {
     let resultsDiv = document.createElement('div');
     $(resultsDiv).addClass('searchResults');
     $('main').append(resultsDiv);
+    // Add instructions message
+    let message = document.createElement('p');
+    message.innerText = 'Click/tap to show/hide details.';
+    $(resultsDiv).append(message);
 
     // Display results
     results.forEach(function(business) {
@@ -127,7 +131,7 @@ $('button').click((e) => {
       $(details).hide();
       $('.searchResults').append(businessInfo);
       // Add hover event to toggle details
-      $(businessInfo).on('hover click', function() {
+      $(businessInfo).on('click', function() {
         $(details).toggle();
         // Call map function to display map
         initMap(businessName, geo);
