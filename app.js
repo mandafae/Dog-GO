@@ -127,10 +127,10 @@ $('button').click((e) => {
 
       // Add divs to DOM
       $(businessInfo).append(details);
+      $('.searchResults').append(businessInfo);
       // Hide details
       $(details).hide();
-      $('.searchResults').append(businessInfo);
-      // Add hover event to toggle details
+      // Add click event to toggle details
       $(businessInfo).on('click', function() {
         $(details).toggle();
         // Call map function to display map
@@ -145,8 +145,8 @@ $('button').click((e) => {
   // Error handling
   .fail(function() {
     let errorMessage = document.createElement('p');
-    errorMessage.innerText = "We're sorry. Your search did not return any results.";
-    $('.searchResults').append(errorMessage);
+    errorMessage.innerText = "We're sorry. Your search did not return any results. Please click the logo if you'd like to try again.";
+    $('main').append(errorMessage);
   });
 });
 
