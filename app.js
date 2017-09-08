@@ -127,17 +127,10 @@ $('button').click((e) => {
       $(details).hide();
       $('.searchResults').append(businessInfo);
       // Add hover event to toggle details
-      $(businessInfo).hover(function() {
+      $(businessInfo).on('hover click', function() {
         $(details).toggle();
         // Call map function to display map
         initMap(businessName, geo);
-      })
-      // Add tap events for mobile functionality
-      $(businessInfo).on('tap', function() {
-        $(details).show();
-      })
-      $(details).on('tap', function() {
-        $(this).hide();
       })
     })
 
