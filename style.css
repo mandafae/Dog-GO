@@ -5,15 +5,16 @@ body {
 header {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
   padding: 10px 0px 10px 0px;
-  color: #841983;
   text-align: center;
+}
+
+header p {
+  margin-bottom: 0px;
 }
 
 main {
   margin-top: 5px;
-  margin-bottom: 5px;
   border: 2px solid #000000;
 }
 
@@ -33,9 +34,9 @@ main {
 }
 
 .result {
-  margin-bottom: 5px;
-  padding: 5px 5px 75px 5px;
+  padding: 5px 5px 50px 5px;
   position: relative;
+  top: 2px;
   display: inline-block;
   float: left;
   cursor: default;
@@ -58,11 +59,15 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
-  [class="leftBorderCircles"] {
+  .leftBorderCircles {
     display: none;
   }
-  [class="rightBorderCircles"] {
+  .rightBorderCircles {
     display: none;
+  }
+  .result {
+    border-left: 2px solid #A4D555;
+    border-right: 2px solid #4CDEF5;
   }
 }
 

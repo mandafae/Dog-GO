@@ -98,8 +98,8 @@ $('button').click((e) => {
     $('main').append(resultsDiv);
     // Add instructions message
     let message = document.createElement('p');
-    message.innerText = 'Click/tap to show/hide details.';
-    $(resultsDiv).append(message);
+    message.innerText = 'Tap to show/hide details.';
+    $('header').append(message);
 
     // Display results
     results.forEach(function(business) {
