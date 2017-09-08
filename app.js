@@ -104,7 +104,7 @@ $('button').click((e) => {
       let businessName = business.name;
       let businessAddress = `${business.location.display_address[0]}, ${business.location.display_address[1]}`;
       businessInfo.innerHTML = `<h4>${businessName}</h4><p>${businessAddress}</p>`;
-      $(businessInfo).addClass('result');
+      $(businessInfo).addClass('result col-md-6');
 
       // Create each details div
       let details = document.createElement('div');
@@ -132,6 +132,12 @@ $('button').click((e) => {
         // Call map function to display map
         initMap(businessName, geo);
       })
+      $(businessInfo).bind('tap', function() {
+        $(details).show();
+      })
+      $(details).bind('tap', function(ev) {
+        $(ev.target).hide();
+      })
     })
 
     // Re-draw borders based on length of content in search results
@@ -149,9 +155,11 @@ $('button').click((e) => {
 // Reset search when user clicks on logo
 $('#logo').click((e) => {
   e.preventDefault();
+  // Remove all relevant values
   $('#location').val('');
   $('.searchResults').remove();
   window.searchText = '';
+  // Show search form and photo
   $('.searchForm').show();
   $('.photo').show();
 })
