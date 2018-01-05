@@ -12,3 +12,16 @@
   <li>CORS-anywhere (https://cors-anywhere.herokuapp.com/)</li>
   <li>Yelp Fusion API and Google Maps API</li>
 </ul>
+
+<b>Challenges:</b>
+<p>This was my first full app built with Javascript, but my biggest struggle actually pertained to CORS. Since there was no need to persist any data, I wanted to keep the app fully client-side. However, this made working with the Yelp and Google API's very difficult. I found the CORS Anywhere proxy, and this solved my problems.</p>
+
+<h3>Walkthrough</h3>
+<p>A simple landing page loads with an input field for the address:</p>
+![DogGo landing page](https://pixady.com/file/directDownload/file-Df4bRGKC3fLFAcCeMF7t8N56B)
+
+<p>After the user submits the address, they're taken to a page that displays up to 20 restaurants and bars in their area.</p>
+![DogGo search results](https://pixady.com/file/directDownload/file-0aDBRkjJ7mzH1HUA9PGlbLgtA)
+
+<p>Clicking on a business brings up more information about the business as well as a map, complete with the route from the user's location to the business.</p>
+![DogGo more details](https://pixady.com/file/directDownload/file-3rpNFhAGZmMCX527TYMOGZWnj)
