@@ -18,7 +18,7 @@
 
 <h3>Walkthrough</h3>
 <p>A simple landing page loads with an input field for the address:</p>
-![DogGo landing page](http://res.cloudinary.com/mandafae/image/upload/v1515123562/doggo1_yy5ztk.png?raw=true)
+![DogGo landing page](http://res.cloudinary.com/mandafae/image/upload/v1515123562/doggo1_yy5ztk.png)
 
 <p>After the user submits the address, they're taken to a page that displays up to 20 restaurants and bars in their area.</p>
 ![DogGo search results](http://res.cloudinary.com/mandafae/image/upload/v1515123560/doggo2_ghojwt.png)
