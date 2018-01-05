@@ -18,10 +18,10 @@
 
 <h3>Walkthrough</h3>
 <p>A simple landing page loads with an input field for the address:</p>
-![DogGo landing page](https://pixady.com/file/directDownload/file-Df4bRGKC3fLFAcCeMF7t8N56B)
+![DogGo landing page](http://res.cloudinary.com/mandafae/image/upload/v1515123562/doggo1_yy5ztk.png)
 
 <p>After the user submits the address, they're taken to a page that displays up to 20 restaurants and bars in their area.</p>
-![DogGo search results](https://pixady.com/file/directDownload/file-0aDBRkjJ7mzH1HUA9PGlbLgtA)
+![DogGo search results](http://res.cloudinary.com/mandafae/image/upload/v1515123560/doggo2_ghojwt.png)
 
 <p>Clicking on a business brings up more information about the business as well as a map, complete with the route from the user's location to the business.</p>
-![DogGo more details](https://pixady.com/file/directDownload/file-3rpNFhAGZmMCX527TYMOGZWnj)
+![DogGo more details](http://res.cloudinary.com/mandafae/image/upload/v1515123568/doggo3_j1yvbj.png)
