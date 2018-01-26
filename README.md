@@ -12,7 +12,8 @@
 - Yelp Fusion API and Google Maps API
 
 **Challenges:**
-This was my first full app built with Javascript, but my biggest struggle actually pertained to CORS. Since there was no need to persist any data, I wanted to keep the app fully client-side. However, this made working with the Yelp and Google API's very difficult. I found the CORS Anywhere proxy, and this solved my problems.
+- This was my first full app. My Javascript experience was still pretty limited, and I had only worked with data retrieved from an API a couple of times. Figuring out how to get the information I needed from the Yelp and Google API's was a significant challenge in this project.
+- My biggest struggle pertained to CORS. Since there was no need to persist any data, I wanted to keep the app fully client-side. However, this made working with the Yelp and Google API's very difficult. I found the CORS Anywhere proxy, and this solved my problems.
 
 ### Walkthrough
 A simple landing page loads with an input field for the address:
